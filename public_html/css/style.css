@@ -1,0 +1,46 @@
+/*
+Custom CSS Document
+ */
+
+.upload_image {
+    text-align: right;
+}
+
+.upload_image a {
+    position: absolute;
+    margin-top: -22px;
+    opacity: 0.5;
+    right: 10%;
+    font-size: 12px;
+}
+
+.upload_image a:hover {
+    opacity: 1;
+}
+
+.upload_image img {
+    width: inherit;
+    height: auto;
+}
+
+.user_image_post {
+
+}
+
+.user_image_post textarea {
+    resize: none;
+}
+
+.list {
+    position: fixed;
+    right: 10px;
+    bottom:10px;
+    overflow-y: scroll;
+    padding: 7px;
+    height:300px;
+    width: 180px;
+    border: 2px solid black;
+}
+
+
+
