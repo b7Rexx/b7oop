@@ -42,9 +42,9 @@ Class DBOperation
             while ($row = mysqli_fetch_assoc($list)) {
                 ?>
                 <div style="border:1px solid wheat">
-                    <h3><?= $row['title'] ?></h3><br>
-                    <img src="img/uploads/<?= $row['image'] ?>" alt="post image" style="height:auto;width: 400px">
-                    <p><?= $row['description'] ?></p>
+                    <h3 class="ml-4 pt-1"><?= $row['title'] ?></h3><br>
+                    <img src="img/uploads/<?= $row['image'] ?>" alt="post image" class="post_img">
+                    <p class="ml-3"><?= $row['description'] ?></p>
                 </div>
                 <?php
             }
@@ -60,5 +60,12 @@ Class DBOperation
             <a href="http://b7oop.com/view_profile.php?email=<?=$row['email']?>"><i class="fa fa-user"></i> <?=ucfirst($row['name'])?></a>
             <?php
         }
+    }
+
+
+    function delete_user_with_id($db,$table,$id){
+        mysqli_query($db,"DELETE FROM $table WHERE id=$id");
+        $sess = new Session();
+        $sess->logout();
     }
 }

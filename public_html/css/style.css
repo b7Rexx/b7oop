@@ -42,5 +42,9 @@ Custom CSS Document
     border: 2px solid black;
 }
 
-
-
+.post_img{
+    padding: 5px;
+    height:auto;
+    max-width: 536px;
+    min-height: 230px;
+}
