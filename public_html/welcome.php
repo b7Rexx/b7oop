@@ -39,7 +39,7 @@ $user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
         <div class="col-md-6">
             <form class="form-control user_image_post" method="post" enctype="multipart/form-data"
                   action="actions/user_image_post.php">
-                Title: <input type="text" name="title">
+                <i>Title: </i><input type="text" name="title">
                 <input type="file" name="image">
                 <textarea type="text" name="description" class="form-control mt-2"></textarea>
                 <input type="text" name="post_image_id" style="display:none;" value="<?= $user['id'] ?>">

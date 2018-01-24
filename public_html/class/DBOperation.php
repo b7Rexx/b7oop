@@ -41,7 +41,7 @@ Class DBOperation
         if ($list) {
             while ($row = mysqli_fetch_assoc($list)) {
                 ?>
-                <div style="border:1px solid wheat">
+                <div style="border:1px solid wheat;border-bottom:2px dashed wheat; ">
                     <h3 class="ml-4 pt-1"><?= $row['title'] ?></h3><br>
                     <img src="img/uploads/<?= $row['image'] ?>" alt="post image" class="post_img">
                     <p class="ml-3"><?= $row['description'] ?></p>

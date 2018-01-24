@@ -29,11 +29,6 @@ if(isset($_GET['email'])) {
     <div class="row">
         <div class="col-md-3 upload_image">
             <img src="img/profile/<?= $user_profile['photo'] ?>" alt="profile image" style="width: 250px;height:300px;">
-            <form action="actions/upload_image.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="upload_image" required>
-                <input type="text" name="upload_image_id" style="display:none;" value="<?= $user_profile['id'] ?>">
-                <button type="submit"><i class="fa fa-camera" aria-hidden="true"></i> upload</button>
-            </form>
             <br><br>
             <h2><?= ucfirst(strtolower($user_profile['name'])) ?></h2>
             <p>Email: <?= $user_profile['email'] ?><br>Gender: <?= $user_profile['gender'] ?><br>
