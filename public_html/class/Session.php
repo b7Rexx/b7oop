@@ -12,12 +12,8 @@ Class Session
      * redirects to login if user session not set
      */
     function welcome_session_check()
-    {
-        if (isset($_COOKIE['rem_user'])) {
-            $_SESSION['user'] = $_COOKIE['rem_user'];
-        }
-        if (!isset($_SESSION['user'])) {
-            header('location: http://b7oop.com');
+    { if (!isset($_SESSION['user'])) {
+            header('location: http://b7oop.com/login.php');
             die;
         }
     }
@@ -28,12 +24,8 @@ Class Session
      */
 
     function login_session_check()
-    {
-        if (isset($_COOKIE['rem_user'])) {
-            $_SESSION['user'] = $_COOKIE['rem_user'];
-        }
-        if (isset($_SESSION['user'])) {
-            header('location: http://b7oop.com/welcome.php');
+    {   if (isset($_SESSION['user'])) {
+            header('location: http://b7oop.com');
             die;
         }
     }

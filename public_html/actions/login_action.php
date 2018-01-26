@@ -18,7 +18,7 @@ if (!empty($_POST)) {
                 setcookie('setuser','ok',time()+(24*60*60));
                 $_SESSION['ok']='close to set cookie';
             }
-            header('location: http://b7oop.com/welcome.php');
+            header('location: http://b7oop.com');
             die;
         }
     }

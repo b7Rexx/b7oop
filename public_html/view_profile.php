@@ -18,7 +18,9 @@ if(isset($_GET['email'])) {
     <br>
     <div class="row">
         <div class="col-md-3">
-            <i class="fa fa-grav fa-5x float-left mb-4" aria-hidden="true"></i>
+            <a href="Index.php">
+                <i class="fa fa-grav fa-5x float-left mb-4" aria-hidden="true"></i>
+                &nbsp;<h2>Home</h2></a>
         </div>
         <div class="col-md-6">
         </div>
@@ -42,7 +44,7 @@ if(isset($_GET['email'])) {
                 <input type="file" name="image">
                 <textarea type="text" name="description" class="form-control mt-2"></textarea>
                 <input type="text" name="post_image_id" style="display:none;" value="<?= $user_profile['id'] ?>">
-                <button type="submit" class="btn btn-primary float-right m-3">POST</button>
+                <button type="submit" class="btn btn-primary float-right mt-3">POST</button>
             </form>
             <br><br>
             <div>
@@ -52,7 +54,7 @@ if(isset($_GET['email'])) {
             </div>
         </div>
         <div class="col-md-3">
-            <a class=" btn btn-primary float-right mt-5" href="welcome.php">Go To &nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i> <?=ucfirst($user['name'])?></a>
+            <a class=" btn btn-outline-primary float-right mt-5" href="welcome.php">Go To &nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i> <?=ucfirst($user['name'])?></a>
 
             <div class="list">
                 <i class="fa fa-users" aria-hidden="true"></i> Users

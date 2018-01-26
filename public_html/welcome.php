@@ -5,7 +5,7 @@ $session->welcome_session_check();
 require_once 'includes/header.php';
 
 $db_operation = new DBOperation();
-$user = $db_operation->select_user_detail( 'users', $_SESSION['user']);
+$user = $db_operation->select_user_detail('users', $_SESSION['user']);
 
 //echo "<pre>";
 //print_r($_COOKIE);
@@ -17,7 +17,9 @@ $user = $db_operation->select_user_detail( 'users', $_SESSION['user']);
     <br>
     <div class="row">
         <div class="col-md-3">
-            <i class="fa fa-grav fa-5x float-left mb-4" aria-hidden="true"></i>
+            <a href="Index.php">
+                <i class="fa fa-grav fa-5x float-left mb-4" aria-hidden="true"></i>
+                &nbsp;<h2>Home</h2></a>
         </div>
         <div class="col-md-6">
         </div>
@@ -46,13 +48,14 @@ $user = $db_operation->select_user_detail( 'users', $_SESSION['user']);
                 <input type="file" name="image" required>
                 <textarea type="text" name="description" class="form-control mt-2"></textarea>
                 <input type="text" name="post_image_id" style="display:none;" value="<?= $user['id'] ?>">
-                <button type="submit" class="btn btn-primary float-right m-3">POST</button>
+                <button type="submit" class="btn btn-primary float-right mt-3">POST</button>
             </form>
             <br><br>
             <div>
+                <br>
                 <?php
-                $db_operation->imageList( 'images', $user['id']);
-                //              ?>
+                $db_operation->imageList('images', $user['id'],'delete_button');
+                ?>
             </div>
         </div>
         <div class="col-md-3">
@@ -61,7 +64,7 @@ $user = $db_operation->select_user_detail( 'users', $_SESSION['user']);
             <div class="list">
                 <i class="fa fa-users" aria-hidden="true"></i> Users
                 <br>
-                <?php $list = $db_operation->fetch_list_users( 'users',$user['id']); ?>
+                <?php $list = $db_operation->fetch_list_users('users', $user['id']); ?>
             </div>
         </div>
     </div>

@@ -39,9 +39,62 @@ body {
     border: 2px solid black;
 }
 
-.post_img {
+.post_image {
+    background: skyblue;
+    margin-bottom: 10px ;
+    border:1px solid wheat;
+    border-bottom:2px dashed wheat;
+}
+.post_image img{
     padding: 5px;
     height: auto;
     max-width: 536px;
     min-height: 230px;
+}
+
+.post_image a{
+    float: right;
+    background: darkred;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+    padding: 0 6px 0 6px;
+}
+
+.comment{
+    border: 2px solid #2b542c;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 20px;
+    position: relative;
+}
+
+.comment b {
+    margin-left: 30px;
+    font-size: 20px;
+    color: saddlebrown;
+}
+.comment p{
+    margin-left: 10px;
+    color: saddlebrown;
+}
+
+.comment i {
+    color:black;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.comment a{
+    font-size: 13px;
+    background: none;
+    color:blue;
+    font-weight: normal;
+}
+
+.custom_date i{
+    color:black;
+    font-size: 13px;
 }
