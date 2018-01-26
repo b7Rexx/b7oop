@@ -75,7 +75,8 @@ Class Session
 
     //logout
     function logout(){
-        setcookie('user','',100);
         unset($_SESSION['user']);
+        session_destroy();
+
     }
 }

@@ -6,7 +6,7 @@ $session = new Session();
 $session->add_info();
 
 $db_operation = new DBOperation();
-$last_row = $db_operation->select_last_row($db);
+$last_row = $db_operation->select_last_row();
 
 ?>
 <div class="container">

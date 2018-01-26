@@ -5,9 +5,12 @@ $session->welcome_session_check();
 require_once 'includes/header.php';
 
 $db_operation = new DBOperation();
-$user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
-//print_r($_COOKIE);
+$user = $db_operation->select_user_detail( 'users', $_SESSION['user']);
 
+//echo "<pre>";
+//print_r($_COOKIE);
+//print_r($_SESSION);
+//echo "</pre>";
 ?>
 
 <div class="container">
@@ -39,8 +42,8 @@ $user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
         <div class="col-md-6">
             <form class="form-control user_image_post" method="post" enctype="multipart/form-data"
                   action="actions/user_image_post.php">
-                <i>Title: </i><input type="text" name="title">
-                <input type="file" name="image">
+                <i>Title: </i><input type="text" name="title" required>
+                <input type="file" name="image" required>
                 <textarea type="text" name="description" class="form-control mt-2"></textarea>
                 <input type="text" name="post_image_id" style="display:none;" value="<?= $user['id'] ?>">
                 <button type="submit" class="btn btn-primary float-right m-3">POST</button>
@@ -48,7 +51,7 @@ $user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
             <br><br>
             <div>
                 <?php
-                $db_operation->imageList($db, 'images', $user['id']);
+                $db_operation->imageList( 'images', $user['id']);
                 //              ?>
             </div>
         </div>
@@ -58,7 +61,7 @@ $user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
             <div class="list">
                 <i class="fa fa-users" aria-hidden="true"></i> Users
                 <br>
-                <?php $list = $db_operation->fetch_list_users($db, 'users',$user['id']); ?>
+                <?php $list = $db_operation->fetch_list_users( 'users',$user['id']); ?>
             </div>
         </div>
     </div>

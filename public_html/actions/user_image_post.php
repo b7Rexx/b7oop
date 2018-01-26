@@ -1,6 +1,6 @@
 <?php
 require_once '../class/DBOperation.php';
-
+$db_operation = new DBOperation();
 if (!empty($_POST)) {
     $title = $_POST['title'];
     $image = $_FILES['image']['tmp_name'];
@@ -10,7 +10,7 @@ if (!empty($_POST)) {
     $id = $_POST['post_image_id'];
 
     if (move_uploaded_file($image, "../img/uploads  /" . $photo)) {
-        $res = mysqli_query($db, "INSERT INTO images (image,title,description,user_id) VALUES ('$photo','$title','$description','$id')");
+        $db_operation->set_photo($photo,$id,$title,$description);
 //        if ($res) {
 //            echo "<br>";
 //            echo "hello Test 1";
@@ -18,3 +18,4 @@ if (!empty($_POST)) {
     }
 }
 header('location: http://b7oop.com/welcome.php');
+die;

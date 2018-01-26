@@ -6,7 +6,7 @@ $session->welcome_session_check();
 require_once 'includes/header.php';
 
 $db_operation = new DBOperation();
-$user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
+$user = $db_operation->select_user_detail('users', $_SESSION['user']);
 
 $gen = new Gender();
 ?>

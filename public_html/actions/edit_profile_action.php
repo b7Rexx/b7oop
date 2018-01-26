@@ -10,7 +10,8 @@ if (!empty($_POST)) {
         $bio = (isset($_POST['bio'])) ? $_POST['bio'] : '';
         $id = $_POST['edit_id'];
 
-        $edit_info = mysqli_query($db, "UPDATE users SET name='$name',gender='$gender',address='$address',contact='$contact',bio='$bio' WHERE id='$id';");
+        $db_operation = new DBOperation();
+        $edit_info = $db_operation->edit_info($gender,$address,$contact,$bio,$id,$name);
 
         if ($edit_info) {
             header('location: http://b7oop.com/edit_profile.php');

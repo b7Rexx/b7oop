@@ -3,6 +3,11 @@ require_once 'class/DBOperation.php';
 $session = new Session();
 $session->login_session_check();
 
+//echo "<pre>";
+//print_r($_COOKIE);
+//print_r($_SESSION);
+//echo "</pre>";
+
 require_once 'includes/header.php';
 ?>
 <div class="container">
@@ -15,10 +20,10 @@ require_once 'includes/header.php';
 
             <form action="actions/login_action.php" method="post">
                 <i class="fa fa-user"></i> <label for="user">Username</label>
-                <input class="form-control mb-2" type="text" id="user" name="user">
+                <input class="form-control mb-2" type="text" id="user" name="user" required>
                 <i class="fa fa-key"></i> <label for="pass">Password</label>
-                <input class="form-control" type="password" id="pass" name="pass"><br>
-                <input type="checkbox" name="remember" value="ok"> Stay Signed in <br>
+                <input class="form-control" type="password" id="pass" name="pass" required><br>
+                <input type="checkbox" name="set_user" value="ok"> Stay Signed in <br>
                 <?php $session->displayLoginMsg(); ?>
                 <button type="submit" class="btn btn-success mt-3">Login</button>
             </form>

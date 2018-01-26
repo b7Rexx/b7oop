@@ -5,9 +5,9 @@ $session->welcome_session_check();
 require_once 'includes/header.php';
 
 $db_operation = new DBOperation();
-$user = $db_operation->select_user_detail($db, 'users', $_SESSION['user']);
+$user = $db_operation->select_user_detail('users', $_SESSION['user']);
 if(isset($_GET['email'])) {
-    $user_profile = $db_operation->select_user_detail($db, 'users', $_GET['email']);
+    $user_profile = $db_operation->select_user_detail('users', $_GET['email']);
 }else{
     header('location: welcome.php');
     die;
@@ -47,7 +47,7 @@ if(isset($_GET['email'])) {
             <br><br>
             <div>
                 <?php
-                $db_operation->imageList($db, 'images', $user_profile['id']);
+                $db_operation->imageList('images', $user_profile['id']);
                 //              ?>
             </div>
         </div>
@@ -57,7 +57,7 @@ if(isset($_GET['email'])) {
             <div class="list">
                 <i class="fa fa-users" aria-hidden="true"></i> Users
                 <br>
-                <?php $list = $db_operation->fetch_list_users($db, 'users',$user['id']); ?>
+                <?php $list = $db_operation->fetch_list_users('users',$user['id']); ?>
             </div>
         </div>
     </div>
