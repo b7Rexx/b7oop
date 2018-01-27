@@ -3,11 +3,6 @@ require_once 'class/DBOperation.php';
 $session = new Session();
 $session->login_session_check();
 
-//echo "<pre>";
-//print_r($_COOKIE);
-//print_r($_SESSION);
-//echo "</pre>";
-
 require_once 'includes/header.php';
 ?>
 <div class="container">

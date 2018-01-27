@@ -9,7 +9,7 @@ $user = $db_operation->select_user_detail('users', $_SESSION['user']);
 if(isset($_GET['email'])) {
     $user_profile = $db_operation->select_user_detail('users', $_GET['email']);
 }else{
-    header('location: welcome.php');
+    header('location: index.php');
     die;
 }
 ?>

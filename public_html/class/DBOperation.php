@@ -89,18 +89,18 @@ Class DBOperation
             $check_name = $this->session_info('user_name');
             if($_SESSION['user'] == $check_email){
             ?>
-                <b><?= ucfirst($return['name']) ?></b><a href="../actions/delete_comment.php?id=<?= $row['id'] ?>"
+                <a href="../view_profile.php?email=<?= $return['email']?>"><b><?= ucfirst($return['name']) ?></b></a><a href="../actions/delete_comment.php?id=<?= $row['id'] ?>"
                                                          onclick="return confirm('Delete this comment?')">Delete</a>
             <?php
             }
             elseif ($row['user_id'] == $check_name) {
                 ?>
-                <b><?= ucfirst($return['name']) ?></b><a href="../actions/delete_comment.php?id=<?= $row['id'] ?>"
+                <a href="../view_profile.php?email=<?= $return['email']?>"><b><?= ucfirst($return['name']) ?></b></a><a href="../actions/delete_comment.php?id=<?= $row['id'] ?>"
                                                          onclick="return confirm('Delete this comment?')">Delete</a>
                 <?php
             } else {
                 ?>
-                <b><?= ucfirst($return['name']) ?></b>
+                <a href="../view_profile.php?email=<?= $return['email']?>"><b><?= ucfirst($return['name']) ?></b></a>
                 <?php
             }
             echo "<p>{$row['user_comment']}</p>";

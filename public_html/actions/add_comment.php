@@ -13,4 +13,4 @@ if(!empty($_POST)){
     $user_id = ($db_operation->select_user_detail('users',$_SESSION['user']))['id'];
     $db_operation->insert_into_comment($comment,$user_id,$image_id);
 }
-header('location: ../welcome.php');
+header('location: ../index.php');

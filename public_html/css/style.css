@@ -70,11 +70,19 @@ body {
 }
 
 .comment b {
-    margin-left: 30px;
     font-size: 20px;
     color: saddlebrown;
+    position: absolute;
+    left: 10px;
 }
+
+.comment b:hover{
+    color:green;
+    border:2px inset transparent;
+}
+
 .comment p{
+    margin-top: 30px;
     margin-left: 10px;
     color: saddlebrown;
 }
@@ -98,3 +106,9 @@ body {
     color:black;
     font-size: 13px;
 }
+
+.fa-grav:hover {
+    transform: rotate(360deg);
+    transition-duration:3s ;
+}
+

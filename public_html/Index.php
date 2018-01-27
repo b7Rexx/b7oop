@@ -6,11 +6,6 @@ require_once 'includes/header.php';
 
 $db_operation = new DBOperation();
 $user = $db_operation->select_user_detail('users', $_SESSION['user']);
-
-//echo "<pre>";
-//print_r($_COOKIE);
-//print_r($_SESSION);
-//echo "</pre>";
 ?>
 
 <div class="container">
